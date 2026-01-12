@@ -43,6 +43,16 @@ public class detector {
         // Creamos y devolvemos un evento de emergencia
         return new EmergencyEvent("Accidente", ubicacion, null, impacto, personas);
     }
+    //nueva caracteristica
+    public boolean comprobarCinturon() {
+        try {
+            // Lógica simulada
+            return true; // sensor activado
+        } catch (Exception e) {
+            System.out.println("Error al comprobar cinturón: " + e.getMessage());
+            return false;
+        }
+    }
 
     // Método adicional para pruebas unitarias sin usar consola
     public EmergencyEvent simulateEvent(boolean impactoFuerte, int fuerza, int numOcupantes, boolean movimiento, String ubicacion) {
