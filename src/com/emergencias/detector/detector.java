@@ -16,6 +16,17 @@ public class detector {
         this.umbralActivacion = umbralActivacion;
         this.sc = new Scanner(System.in);
     }
+    // Correccion
+    public boolean validateSeverity(int fuerzaImpacto) {
+        if (fuerzaImpacto >= umbralActivacion) { // Usamos el parámetro
+            System.out.println("Impacto grave detectado (" + fuerzaImpacto + " >= " + umbralActivacion + ").");
+            return true;
+        } else {
+            System.out.println("Impacto bajo (" + fuerzaImpacto + "). ¿Deseas confirmar la alerta? (S/N)");
+            String resp = sc.nextLine().trim().toUpperCase();
+            return "S".equals(resp); // Permite confirmar la alerta manualmente
+        }
+    }
 
     // Método principal que detecta la emergencia
     public EmergencyEvent detectEvent() {
@@ -34,11 +45,20 @@ public class detector {
         System.out.println("Ubicación del vehículo: ");
         String ubicacion = sc.nextLine();
 
+
+
         // Validamos contra el umbral
-        if (impacto < umbralActivacion) {
-            System.out.println("Impacto menor que el umbral. No se considera emergencia.");
+       // if (impacto < umbralActivacion) {
+        //    System.out.println("Impacto menor que el umbral. No se considera emergencia.");
+           // return null;
+
+        //correccion
+        if (!validateSeverity(impacto)) {
+            System.out.println("Alerta descartada tras validación (posible falso positivo).");
             return null;
         }
+
+
 
         // Creamos y devolvemos un evento de emergencia
         return new EmergencyEvent("Accidente", ubicacion, null, impacto, personas);
