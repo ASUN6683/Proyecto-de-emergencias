@@ -1,6 +1,6 @@
 package com.emergencias.alert;
 import com.emergencias.model.EmergencyEvent;
-
+import com.google.gson.Gson;
 import java.io.FileWriter;
 
 public class AlertSender {
