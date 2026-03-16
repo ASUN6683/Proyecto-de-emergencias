@@ -1,0 +1,4 @@
+Emergencia: Accidente | Ubicación: 26 | Fuerza impacto: 80.0 | Ocupantes: 3
+Emergencia: Accidente | Ubicación: 38.0 -1.1 | Fuerza impacto: 80.0 | Ocupantes: 3
+Emergencia: Accidente | Ubicación: 38.0 - 1.1 | Fuerza impacto: 80.0 | Ocupantes: 3
+Emergencia: Accidente | Ubicación: Murcia | Fuerza impacto: 80.0 | Ocupantes: 3
